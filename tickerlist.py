@@ -64,12 +64,12 @@ def get_all_tickers():
     all_symbols.extend(symbols)
 
     all_symbols = sorted(set(all_symbols))
-    with open(ALLFILE, 'w') as f:
+    with open(ALLFILE, 'w', newline='\n') as f:
         for line in all_lines:
             f.write(line)
             f.write('\n')
 
-    with open(ALLSYMBOL_FILE, 'w') as f:
+    with open(ALLSYMBOL_FILE, 'w', newline='\n') as f:
         for line in all_symbols:
             f.write(line)
             f.write('\n')
