@@ -36,7 +36,7 @@ def create_file_from_url(outfile, url):
 def get_symbols_from_file(file):
     symbols = []
     lines = []
-    with open(NASDAQFILE, newline='') as csvfile:
+    with open(file, newline='') as csvfile:
         symbolreader = csv.reader(csvfile, delimiter=',', quotechar='\"')
         # assuming there's always a header line
         next(symbolreader)
@@ -56,10 +56,10 @@ def get_all_tickers():
     symbols, lines = get_symbols_from_file(NASDAQFILE)
     all_lines.extend(lines)
     all_symbols.extend(symbols)
-    symbols, lines = get_symbols_from_file(AMEXFILE)
+    symbols, lines = get_symbols_from_file(NYSEFILE)
     all_lines.extend(lines)
     all_symbols.extend(symbols)
-    symbols, lines = get_symbols_from_file(NYSEFILE)
+    symbols, lines = get_symbols_from_file(AMEXFILE)
     all_lines.extend(lines)
     all_symbols.extend(symbols)
 
