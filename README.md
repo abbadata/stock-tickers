@@ -29,7 +29,7 @@ Symbol files are created in data/ .
   - List of all stock listed on NYSE. Pulled verbatim from https://old.nasdaq.com/screening/companies-by-name.aspx?letter=0&exchange=nyse&render=download
 
 ## Combination of nasdaq.csv, amex.csv, and nyse.csv . Still contains all fields.
-- [data/all.csv](https://github.com/abbadata/stock-tickers/blob/main/data/all.csv) : all 
+- [data/all.csv](https://github.com/abbadata/stock-tickers/blob/main/data/all.csv)
 
 # Dependencies
 All data is currently pulled from old.nasdaq.com . If it is no longer available there, this will need to grab data from somewhere else.

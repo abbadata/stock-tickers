@@ -42,7 +42,7 @@ def get_symbols_from_file(file):
         next(symbolreader)
         for row in symbolreader:
             symbols.append(row[0])
-            lines.append(', '.join(['"' + i + '"' for i in row]))
+            lines.append(','.join(['"' + i + '"' for i in row]))
             #print(row[0])
     return symbols, lines
 
