@@ -17,8 +17,15 @@ $ python tickerlist.py
 Symbol files are created in data/ .
 
 # Files
+## Main symbol files
 - [data/allsymbols.txt](https://github.com/abbadata/stock-tickers/blob/main/data/allsymbols.txt)
   - Ticker symbol list. Sorted and contains no duplicates.
+- [data/nasdaqsymbols.txt](https://github.com/abbadata/stock-tickers/blob/main/data/nasdaqsymbols.txt)
+  - Ticker symbol list for stock listed on Nasdaq. Sorted and contains no duplicates.
+- [data/nysesymbols.txt](https://github.com/abbadata/stock-tickers/blob/main/data/nysesymbols.txt)
+  - Ticker symbol list for stock listed on NYSE. Sorted and contains no duplicates.
+- [data/amexsymbols.txt](https://github.com/abbadata/stock-tickers/blob/main/data/amexsymbols.txt)
+  - Ticker symbol list for stock listed on AMEX. Sorted and contains no duplicates.
 
 ## The following ticker symbol files are pulled verbatim from nasdaq.com. Contains additional fields such as company name, market cap, etc.
 - [data/nasdaq.csv](https://github.com/abbadata/stock-tickers/blob/main/data/nasdaq.csv)
