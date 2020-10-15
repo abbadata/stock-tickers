@@ -12,6 +12,10 @@ NASDAQFILE = "data/nasdaq.csv"
 AMEXFILE = "data/amex.csv"
 NYSEFILE = "data/nyse.csv"
 ALLFILE = "data/all.csv"
+
+NASDAQSYMBOL_FILE = "data/nasdaqsymbols.txt"
+AMEXSYMBOL_FILE = "data/amexsymbols.txt"
+NYSESYMBOL_FILE = "data/nysesymbols.txt"
 ALLSYMBOL_FILE = "data/allsymbols.txt"
 
 class ResponseError(Exception):
@@ -25,9 +29,9 @@ def create_file_from_url(outfile, url):
 
     # check if we're actually getting the csv file
     if (r.status_code != 200):
-        raise ResponseError("Bad server response from url. url=" + url)
+        raise ResponseError("Bad server response from url. url={url}".format(url=url))
     if (r.headers["Content-Type"] != "application/text"):
-        raise ResponseError("Response likely not in CSV format. url=" + url)
+        raise ResponseError("Response likely not in CSV format. url={url}".format(url=url))
 
     with open(outfile, 'wb') as f:
         f.write(r.content)
@@ -56,12 +60,33 @@ def get_all_tickers():
     symbols, lines = get_symbols_from_file(NASDAQFILE)
     all_lines.extend(lines)
     all_symbols.extend(symbols)
+
+    symbols = sorted(set(symbols))
+    with open(NASDAQSYMBOL_FILE, 'w', newline='\n') as f:
+        for symbol in symbols:
+            f.write(symbol)
+            f.write('\n')
+
     symbols, lines = get_symbols_from_file(NYSEFILE)
     all_lines.extend(lines)
     all_symbols.extend(symbols)
+
+    symbols = sorted(set(symbols))
+    with open(NYSESYMBOL_FILE, 'w', newline='\n') as f:
+        for symbol in symbols:
+            f.write(symbol)
+            f.write('\n')
+
     symbols, lines = get_symbols_from_file(AMEXFILE)
     all_lines.extend(lines)
     all_symbols.extend(symbols)
+
+    symbols = sorted(set(symbols))
+    with open(AMEXSYMBOL_FILE, 'w', newline='\n') as f:
+        for symbol in symbols:
+            f.write(symbol)
+            f.write('\n')
+
 
     all_symbols = sorted(set(all_symbols))
     with open(ALLFILE, 'w', newline='\n') as f:
