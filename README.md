@@ -5,7 +5,7 @@ List of all stock ticker symbols - updated daily at midnight EST.
 Pulls all data from old.nasdaq.com nightly, generates ticker symbol files, then pushes changes to github.
 
 # Usage
-    $ wget https://github.com/abbadata/stock-tickers/blob/main/data/allsymbols.txt
+    $ wget https://raw.githubusercontent.com/abbadata/stock-tickers/main/data/allsymbols.txt
 (or whichever file you're interested in)
 
 OR
